@@ -1,0 +1,38 @@
+{
+  "name": "Generic devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "jetbrains": {
+      "backend": "IntelliJ"
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "redhat.java",
+        "vscjava.vscode-java-pack",
+        "tamasfe.even-better-toml",
+        "yzhang.markdown-all-in-one",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "containerEnv": {
+    "PYTHONUNBUFFERED": "1",
+    "PIP_DISABLE_PIP_VERSION_CHECK": "1",
+    "JAVA_HOME": "/usr/lib/jvm/temurin-21-jdk-amd64"
+  },
+  "forwardPorts": [
+    8000,
+    8888
+  ],
+  "remoteUser": "devuser"
+}

@@ -1,0 +1,36 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // seen.json persistence still uses Jackson directly.
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+
+    implementation 'com.anthropic:anthropic-java:2.48.0'
+    implementation 'org.telegram:telegrambots-client:10.0.0'
+
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    runtimeOnly     'org.slf4j:slf4j-simple:2.0.16'
+
+    testImplementation platform('org.junit:junit-bom:5.11.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+application {
+    mainClass = 'com.kirioslab.digestbot.DigestBot'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

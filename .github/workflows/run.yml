@@ -1,0 +1,61 @@
+name: Daily Dev Digest
+
+  # Once a day: ask Claude for fresh Java / Angular / Spring Boot news,
+  # post the new items to a Telegram channel, and commit the "seen" list back.
+
+on:
+  # Cron is UTC-only and does NOT follow daylight saving.
+  # Poland is UTC+1 (winter) / UTC+2 (summer), so 06:00 UTC lands
+  # ~08:00 local in summer and ~07:00 local in winter (one hour of drift).
+  schedule:
+    - cron: '0 6 * * *'
+  # Manual "Run workflow" button — the only way to test a cron trigger on demand.
+  workflow_dispatch:
+
+# The default GITHUB_TOKEN has been read-only since Feb 2023;
+# grant write so the job can push the updated seen-list back.
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10        # safety net so a hung run can't burn minutes
+
+    steps:
+      # checkout persists credentials by default — that's what lets `git push` work later.
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      # ---- YOUR STACK GOES HERE ----
+      # Example: a one-shot Java program (not the always-on Spring Boot app —
+      # on Actions the logic runs, exits, and the runner is thrown away).
+      # Swap setup-java + the run step below for your build tool / language.
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+
+      # The program reads resources/seen.json, calls Claude (web search on) + Telegram,
+      # then rewrites resources/seen.json with the new links.
+      - name: Run digest
+        run: ./gradlew run
+        env:
+          ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+
+      # Commit the updated seen-list. This commit doubles as the keepalive:
+      # commits count as repo activity, which stops GitHub disabling the
+      # schedule after 60 idle days. The `|| true`-style guard means no commit
+      # (and so no activity) on days with zero new items — the keepalive
+      # backstop from before covers that gap.
+      - name: Persist seen-list
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resources/seen.json
+          git diff --staged --quiet || git commit -m "chore: update seen digest items"
+          git push
