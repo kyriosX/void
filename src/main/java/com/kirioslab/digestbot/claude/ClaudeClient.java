@@ -4,7 +4,7 @@ import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import com.anthropic.models.messages.Message;
 import com.anthropic.models.messages.MessageCreateParams;
-import com.anthropic.models.messages.WebSearchTool20250305;
+import com.anthropic.models.messages.WebSearchTool20260318;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +26,10 @@ public class ClaudeClient {
         MessageCreateParams params = MessageCreateParams.builder()
                 .model(model)
                 .maxTokens(2048L)
-                .addTool(WebSearchTool20250305.builder().maxUses(8L).build())
+                .addTool(WebSearchTool20260318.builder()
+                        .maxUses(8L)
+                        .responseInclusion(WebSearchTool20260318.ResponseInclusion.EXCLUDED)
+                        .build())
                 .system(ClaudeResponseParser.systemPrompt(recentList))
                 .addUserMessage("Run today's digest.")
                 .build();

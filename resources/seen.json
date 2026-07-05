@@ -1,1 +1,25 @@
-[]
+[ {
+  "url" : "https://github.com/angular/angular/releases",
+  "title" : "Angular 22.0.5 and 22.1.0-next.4 Released",
+  "date" : "2026-07-05"
+}, {
+  "url" : "https://www.herodevs.com/blog-posts/spring-boot-versions-eol-dates-and-latest-releases-april-2026",
+  "title" : "Spring Boot 3.5 Reaches Open-Source End of Life (June 30, 2026)",
+  "date" : "2026-07-05"
+}, {
+  "url" : "https://www.baeldung.com/java-26-new-features",
+  "title" : "New Features in Java 26 — Baeldung Reference Guide Updated",
+  "date" : "2026-07-05"
+}, {
+  "url" : "https://endoflife.date/angular",
+  "title" : "Angular Release & EOL Matrix Updated (July 3, 2026)",
+  "date" : "2026-07-05"
+}, {
+  "url" : "https://spring.io/blog/2026/06/10/spring-boot-4/",
+  "title" : "Spring Boot 4.1.0 Available Now — Official Release Announcement",
+  "date" : "2026-07-05"
+}, {
+  "url" : "https://www.oracle.com/security-alerts/",
+  "title" : "Oracle July 2026 Critical Patch Update — Pre-Release Advisory",
+  "date" : "2026-07-05"
+} ]
