@@ -1,1 +1,9 @@
-[]
+[ {
+  "url" : "https://github.com/angular/angular/releases",
+  "title" : "Angular 22.1.0-next.4 Pre-release",
+  "date" : "2026-07-05"
+}, {
+  "url" : "https://www.herodevs.com/blog-posts/spring-boot-versions-eol-dates-and-latest-releases-april-2026",
+  "title" : "Spring Boot 3.5 Reaches Open-Source End of Life",
+  "date" : "2026-07-05"
+} ]
