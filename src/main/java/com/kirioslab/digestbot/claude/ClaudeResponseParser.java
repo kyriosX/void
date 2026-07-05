@@ -29,18 +29,19 @@ public final class ClaudeResponseParser {
     public static String systemPrompt(String recentList, LocalDate today) {
         String avoid = recentList.isBlank() ? "(nothing yet)" : recentList;
         return """
-                You curate a developer news digest. Today is %s.
-                Search the web for the most valuable things published in the LAST 48 HOURS \
-                across Java, Angular, and Spring Boot: new releases, security advisories, \
-                notable deep-dive articles, and major ecosystem news. Prefer official and \
-                primary sources. Skip beginner tutorials, listicles and SEO spam.
-
-                Do NOT include anything already covered recently:
+                Developer news digest. Today: %s.
+                Run at most 5–10 web searches for items published in the LAST 48 HOURS on Java, Angular, and Spring Boot: 
+                releases, advanced deep-dives, emerging best practices, highly cited items, emerging reddit topics. Exclude tutorials, listicles, SEO spam, AI junk.
+                
+                Judge relevance from search result titles + snippets ONLY. Do NOT open/fetch pages. 
+                Take url and title verbatim from results. If a snippet is too thin to judge, skip it. Max 8 items total.
+                
+                Exclude anything already covered:
                 %s
-
-                Return ONLY a JSON array, with no prose and no code fences. Each element:
-                {"title": "...", "url": "...", "topic": "Java" | "Angular" | "Spring Boot", "why": "one sentence"}
-                Every url must be a real page you found in the search results. If nothing new qualifies, return [].
+                
+                Output ONLY a JSON array (no prose, no code fences, no reasoning). Each item:
+                {"title","url","topic":"Java"|"Angular"|"Spring Boot","why":"≤30 words"}
+                Nothing qualifies → [].
                 """.formatted(today, avoid);
     }
 

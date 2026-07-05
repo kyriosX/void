@@ -25,10 +25,11 @@ public class ClaudeClient {
         log.info("Asking Claude ({}) for today's digest, with web search enabled...", model);
         MessageCreateParams params = MessageCreateParams.builder()
                 .model(model)
-                .maxTokens(2048L)
+                .maxTokens(4048L)
                 .addTool(WebSearchTool20260318.builder()
-                        .maxUses(8L)
+                        .maxUses(12L)
                         .responseInclusion(WebSearchTool20260318.ResponseInclusion.EXCLUDED)
+                        .addAllowedCaller(WebSearchTool20260318.AllowedCaller.DIRECT)
                         .build())
                 .system(ClaudeResponseParser.systemPrompt(recentList))
                 .addUserMessage("Run today's digest.")

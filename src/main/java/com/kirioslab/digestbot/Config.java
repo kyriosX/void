@@ -19,9 +19,9 @@ public record Config(
                 requireEnv("ANTHROPIC_API_KEY"),
                 requireEnv("TELEGRAM_BOT_TOKEN"),
                 requireEnv("TELEGRAM_CHANNEL_ID"),
-                "claude-sonnet-4-6",       // cheap enough for a daily run
+                "claude-haiku-4-5",       // cheap enough for a daily run
                 60,   // how many recent titles to show Claude so it avoids repeats
-                15,   // cap items per digest
+                8,   // cap items per digest
                 3800, // stay under Telegram's ~4096-char message cap
                 true  // drop links that didn't appear in search results
         );
