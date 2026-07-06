@@ -6,4 +6,12 @@
   "url" : "https://www.herodevs.com/blog-posts/spring-boot-versions-eol-dates-and-latest-releases-april-2026",
   "title" : "Spring Boot 3.5 Reaches Open-Source End of Life",
   "date" : "2026-07-05"
+}, {
+  "url" : "https://spring.io/security/",
+  "title" : "Spring Boot Mail auto-configuration vulnerability (CVE-2026-40992), ArtemisEmbeddedConfigurationFactory directory traversal (CVE-2026-41001), Spring Integration FTP/SFTP/SMB arbitrary file write (CVE-2026-40987)",
+  "date" : "2026-07-06"
+}, {
+  "url" : "https://spring.io/blog/",
+  "title" : "Spring Boot 3.5.16 final release, 3.5 line reaches open-source EOL June 30, 2026",
+  "date" : "2026-07-06"
 } ]
