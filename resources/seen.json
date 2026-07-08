@@ -14,4 +14,12 @@
   "url" : "https://spring.io/blog/",
   "title" : "Spring Boot 3.5.16 final release, 3.5 line reaches open-source EOL June 30, 2026",
   "date" : "2026-07-06"
+}, {
+  "url" : "https://blog.jetbrains.com/idea/2026/07/java-annotated-monthly-july-2026/",
+  "title" : "Java Annotated Monthly – July 2026",
+  "date" : "2026-07-08"
+}, {
+  "url" : "https://jdk.java.net/27/release-notes",
+  "title" : "JDK 27 Early-Access Release Notes",
+  "date" : "2026-07-08"
 } ]
