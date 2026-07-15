@@ -38,4 +38,24 @@
   "url" : "https://www.herodevs.com/blog-posts/angulars-2026-cve-surge-21-new-advisories-no-patches-for-eol-apps",
   "title" : "Angular's 2026 CVE Surge: 21 New Advisories",
   "date" : "2026-07-14"
+}, {
+  "url" : "https://angular.love/angular-22-key-features-and-changes",
+  "title" : "Angular 22 Signal Forms Reach Production Stability with Enhanced SSRF Protection",
+  "date" : "2026-07-15"
+}, {
+  "url" : "https://snyk.io/articles/public-key-breaks-authentication-pac4j-jwt/",
+  "title" : "CVE-2026-29000: pac4j-jwt Authentication Bypass with CVSS 10.0",
+  "date" : "2026-07-15"
+}, {
+  "url" : "https://www.herodevs.com/vulnerability-directory/cve-2026-55957",
+  "title" : "Apache Tomcat CVE-2026-55957: JNDIRealm GSSAPI Authentication Bypass",
+  "date" : "2026-07-15"
+}, {
+  "url" : "https://cybersecuritynews.com/multiple-apache-tomcat-vulnerabilities/",
+  "title" : "Apache Tomcat CVE-2026-55956: Security Constraint Bypass on Default Servlet",
+  "date" : "2026-07-15"
+}, {
+  "url" : "https://www.sonatype.com/blog/pac4j-cve-2026-29000-sonatype-finds-19-additional-packages",
+  "title" : "Sonatype Identifies 19 Packages Impacted by pac4j CVE-2026-29000; 83K Vulnerable Downloads Weekly",
+  "date" : "2026-07-15"
 } ]
