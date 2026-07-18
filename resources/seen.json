@@ -66,4 +66,8 @@
   "url" : "https://www.sentinelone.com/vulnerability-database/cve-2026-54712/",
   "title" : "OpenTelemetry Java CVE-2026-54712 RMI Memory Exhaustion Vulnerability",
   "date" : "2026-07-16"
+}, {
+  "url" : "https://github.com/angular/angular/pull/69817",
+  "title" : "Angular Shifts to Yearly Major Release Cycle (PR #69817)",
+  "date" : "2026-07-18"
 } ]
