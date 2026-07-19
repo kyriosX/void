@@ -70,4 +70,8 @@
   "url" : "https://github.com/angular/angular/pull/69817",
   "title" : "Angular Shifts to Yearly Major Release Cycle (PR #69817)",
   "date" : "2026-07-18"
+}, {
+  "url" : "https://openjdk.org/projects/jdk/27/",
+  "title" : "JDK 27 Rampdown Phase One: Feature Freeze with Post-Quantum TLS JEP Targeted",
+  "date" : "2026-07-19"
 } ]
