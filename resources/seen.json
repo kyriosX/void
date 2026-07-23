@@ -82,4 +82,12 @@
   "url" : "https://versionlog.com/angular/",
   "title" : "Angular 22.0.7 and 22.1.0-next.6 Released",
   "date" : "2026-07-22"
+}, {
+  "url" : "https://www.oracle.com/security-alerts/cpujul2026.html",
+  "title" : "Oracle Critical Patch Update Advisory - July 2026",
+  "date" : "2026-07-23"
+}, {
+  "url" : "https://www.wildfly.org/news/2026/07/16/WildFly-41-is-released/",
+  "title" : "WildFly 41 is released!",
+  "date" : "2026-07-23"
 } ]
