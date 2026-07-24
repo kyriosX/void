@@ -90,4 +90,12 @@
   "url" : "https://www.wildfly.org/news/2026/07/16/WildFly-41-is-released/",
   "title" : "WildFly 41 is released!",
   "date" : "2026-07-23"
+}, {
+  "url" : "https://jdk.java.net/26/release-notes",
+  "title" : "JDK 26.0.2 Released with ML-KEM/ML-DSA PKCS #8 Format Updates",
+  "date" : "2026-07-24"
+}, {
+  "url" : "https://docs.azul.com/core/release-notes",
+  "title" : "Azul Zulu July 2026 Quarterly Update Backports JEP 527 to Java 25",
+  "date" : "2026-07-24"
 } ]
